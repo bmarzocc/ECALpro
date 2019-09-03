@@ -1,17 +1,17 @@
 #!/bin/bash
 
-eosPath="/store/group/dpg_ecal/alca_ecalcalib/piZero_Run2/mciprian/" 
+eosPath="/store/group/dpg_ecal/alca_ecalcalib/bmarzocc/CMSPOS2019/" 
 #eosPath="/store/group/dpg_ecal/alca_ecalcalib/piZero2016/emanuele/" 
 #eosPath="/store/group/dpg_ecal/alca_ecalcalib/piZero2016/zhicaiz/" 
-dirName="AlCaP0_2018_ULrereco_1every2_inverted"                            # dirname (see CalibCode/submit/parameters.py)  
-iter_number="1"                                                          # number n of iterations (iter_0 to iter_{n-1})
+dirName="AlCaP0_2018_ULrereco_1every2"                            # dirname (see CalibCode/submit/parameters.py)  
+iter_number="7"                                                          # number n of iterations (iter_0 to iter_{n-1})
 tagName="${dirName}_"                           # TagName (see CalibCode/submit/parameters.py)  
 
 # will copy output here, if directory exists
-wwwTargetDir="/afs/cern.ch/user/m/mciprian/www/pi0calib/ICplot_Legacy/${dirName}/TestConvergence/"               
+wwwTargetDir="./"               
 
 nJump=1
-# leave extension as "noExtension" in you don't need to add additional steps that start from the one above
+# leave extension as "noExtension" if you don't need to add additional steps that start from the one above
 # format is newDirName_ext1,newIterNumber_ext1,newTagName_ext1:newDirName_ext2,newIterNumber_ext2,newTagName_ext2 and so on (different extensions separated by : )
 extension="noExtension"
 extensionDirName="AlCaP0_2018_ULrereco_1every2_inverted_ext1_fromIter0"
