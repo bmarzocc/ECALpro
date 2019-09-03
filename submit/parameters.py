@@ -17,7 +17,7 @@ CalibMapEtaRing    = "CalibCode/FillEpsilonPlot/data/calibMap.root"
 FixGhostDigis      = False   # this parameter is useful only for 2015. In 2016 stream the ghosts are no more there, but this is not harmful (can stay True)
 
 #PATH
-eosPath = '/eos/cms/store/group/dpg_ecal/alca_ecalcalib/piZero_Run2/mciprian'
+eosPath = '/eos/cms/store/group/dpg_ecal/alca_ecalcalib/bmarzocc'
 #
 prefixSourceFile = 'root://cms-xrd-global.cern.ch/'  # last / is left on purpose; tipically it can be '', but if source files are not on eos you need this prefix in PoolSource
 #  
@@ -53,7 +53,7 @@ nIterations      = 1 if isMC==False else 1 # 7
 
 SubmitFurtherIterationsFromExisting = True
 # maybe I don't need the root://eoscms/ prefix if eos is mounted
-startingCalibMap = 'root://eoscms//eos/cms/store/group/dpg_ecal/alca_ecalcalib/piZero2017/emanuele/cmsdas2017/smearedCalibMap_b50_s00.root' # used  only if SubmitFurtherIterationsFromExisting is True
+startingCalibMap = 'root://eoscms//eos/cms/store/group/dpg_ecal/alca_ecalcalib/bmarzocc/CMSPOS2019/smearedCalibMap_b50_s00.root' # used  only if SubmitFurtherIterationsFromExisting is True
 SystOrNot = 0 # can be 0, 1 or 2 to run on all (default), even or odd events. It works only if you submit this new iteration from an existing one, therefore SubmitFurtherIterationsFromExisting must be set true. Tipically 0 is the default and has no real effect, it is like submitting usual iterations.  
 
 #N files
@@ -337,7 +337,7 @@ if ContainmentCorrection == 'EoverEtrue':  # in this case it is better to undefi
    useMVAContainmentCorrections = False
    new_pi0ContainmentCorrections = False
    useContainmentCorrectionsFromEoverEtrue = True
-   fileEoverEtrueContainmentCorrections = "root://eoscms//store/user/bmarzocc/CMSPOS2019/pi0Gun_MC_EoverEtrue_foldSM_v4/iter_0/pi0Gun_MC_EoverEtrue_foldSM_v4_calibMap.root"
+   fileEoverEtrueContainmentCorrections = "root://eoscms//store/group/dpg_ecal/alca_ecalcalib/bmarzocc/CMSPOS2019/pi0Gun_MC_EoverEtrue_foldSM_v4/iter_0/pi0Gun_MC_EoverEtrue_foldSM_v4_calibMap.root"
    #fileEoverEtrueContainmentCorrections = "root://eoscms//store/user/bmarzocc/CMSPOS2019/pi0CC_2018_EoverEtrue_foldSM_nFit10_onlyEB_fixGamma2EoverEtrue/iter_0/pi0CC_2018_EoverEtrue_foldSM_nFit10_onlyEB_fixGamma2EoverEtrue_calibMap.root"
    #fileEoverEtrueContainmentCorrections = "root://eoscms//eos/cms/store/group/dpg_ecal/alca_ecalcalib/piZero2017/mciprian/pi0Gun_MC_EoverEtrue_foldSM_v4/iter_0/pi0Gun_MC_EoverEtrue_foldSM_v4_calibMap.root"
    #fileEoverEtrueContainmentCorrections = "/afs/cern.ch/user/m/mciprian/www/pi0calib/CC_EoverEtrue/product_CC/pi0Gun_MC_EoverEtrue_foldSM_v4_iter1/ContainmentCorrections_EoverEtrue.root"
@@ -394,17 +394,17 @@ useOnlyEEClusterMatchedWithES = 'True'
 #####################
 # if you don't want to overwrite the global tag, set overWriteGlobalTag = False, otherwise, it will be customized based on the following tags  
 #####################
-overWriteGlobalTag = False if isMC==False else False                                     # Allow to overwrite AlphaTag, Laser correction etc
-PFRechitTagRecord='EcalPFRecHitThresholdsRcd';PFRechitTag='EcalPFRecHitThresholds_UL_2018_2e3sig';PFRechitDB='frontier://FrontierProd/CMS_CONDITIONS'
-laserTagRecord='EcalLaserAPDPNRatiosRcd';laserTag='EcalLaserAPDPNRatios_rereco2018_v3';laserDB='frontier://FrontierProd/CMS_CONDITIONS'            
+overWriteGlobalTag = True if isMC==False else False                                     # Allow to overwrite AlphaTag, Laser correction etc
+PFRechitTagRecord='EcalPFRecHitThresholdsRcd';PFRechitTag='EcalPFRecHitThresholds_UL_2017_mc_v2_mixedsigmas';PFRechitDB='frontier://FrontierProd/CMS_CONDITIONS'
+laserTagRecord='EcalLaserAPDPNRatiosRcd';laserTag='EcalLaserAPDPNRatios_rereco2017_v3';laserDB='frontier://FrontierProd/CMS_CONDITIONS'            
 alphaTagRecord='';alphaTag='';alphaDB=''
 GeVTagRecord='';GeVTag='';GeVDB=''
-pulseShapeTagRecord='EcalPulseShapesRcd';pulseShapeTag='EcalPulseShapes_UltraLegacy2018_calib';pulseShapeDB='frontier://FrontierProd/CMS_CONDITIONS'
-pedestalTagRecord='EcalPedestalsRcd';pedestalTag='EcalPedestals_timestamp_2018_18January2019_collisions_blue_laser';pedestalDB='frontier://FrontierProd/CMS_CONDITIONS'
-laserAlphaTagRecord='EcalLaserAlphasRcd';laserAlphaTag='EcalLaserAlphas_EB152-150_EEoptimized18';laserAlphaDB='frontier://FrontierProd/CMS_CONDITIONS'
+pulseShapeTagRecord='EcalPulseShapesRcd';pulseShapeTag='EcalPulseShapes_UltraLegacy2017_calib';pulseShapeDB='frontier://FrontierProd/CMS_CONDITIONS'
+pedestalTagRecord='EcalPedestalsRcd';pedestalTag='EcalPedestals_timestamp_UltraLegacy_2017_v1';pedestalDB='frontier://FrontierProd/CMS_CONDITIONS'
+laserAlphaTagRecord='EcalLaserAlphasRcd';laserAlphaTag='EcalLaserAlphas_EB152-150_EE116_107_SICoptimized17';laserAlphaDB='frontier://FrontierProd/CMS_CONDITIONS'
 ESIntercalibTagRecord='';ESIntercalibTag='';ESIntercalibDB='frontier://FrontierProd/CMS_CONDITIONS'
 ESEEIntercalibTagRecord='';ESEEIntercalibTag='';ESEEIntercalibDB='frontier://FrontierProd/CMS_CONDITIONS'
-intercalibTagRecord='EcalIntercalibConstantsRcd';intercalibTag='EcalIntercalibConstants_Run2018ABCD_run297056_eopPNEB_v1';intercalibDB='frontier://FrontierProd/CMS_CONDITIONS'
+intercalibTagRecord='EcalIntercalibConstantsRcd';intercalibTag='EcalIntercalibConstants_Run2017BCDEF_run297056_eopPNEB_v2';intercalibDB='frontier://FrontierProd/CMS_CONDITIONS'
 linearCorrectionsTagRecord='';linearCorrectionsTag='';linearCorrectionsDB='frontier://FrontierProd/CMS_CONDITIONS'
 
 
