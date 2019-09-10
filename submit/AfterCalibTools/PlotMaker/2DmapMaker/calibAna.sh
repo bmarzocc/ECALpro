@@ -126,6 +126,7 @@ do
 	wwwPath="${wwwBasePath}${dirName}/iter_${i}/2DMaps/Barrel/"
 	mkdir -p ${wwwPath}
 	cp /afs/cern.ch/user/m/mciprian/public/index.php {wwwPath}
+        echo "./"$mainSourceFile $path $dirName $i $tagName "EB" $wwwPath $Pi0orEta   
 	./$mainSourceFile $path $dirName $i $tagName EB $wwwPath $Pi0orEta
     fi
     if [ "$skipEEp" = false ]; then

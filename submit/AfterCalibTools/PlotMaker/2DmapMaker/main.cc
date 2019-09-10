@@ -24,7 +24,7 @@ Int_t main(int argc, char* argv[]) {
 
   string fileToChain = "";
   string path(argv[1]);
-  string eosPath = "root://eoscms//eos/cms" + path;
+  string eosPath = "root://eoscms.cern.ch/" + path;
   string dirName(argv[2]);
   string iter_num(argv[3]);
   string tagName(argv[4]);
@@ -51,6 +51,7 @@ Int_t main(int argc, char* argv[]) {
     // }
 
     fileToChain = eosPath + dirName + "/iter_" + iter_num + "/" + tagName + "calibMap.root";
+    std::cout << "fileToChain: " << fileToChain << std::endl;
     chain->Add(TString(fileToChain.c_str()));
 
     ana = new calibAnaEcalEB(chain);
@@ -68,6 +69,7 @@ Int_t main(int argc, char* argv[]) {
     // }
 
     fileToChain = eosPath + dirName + "/iter_" + iter_num + "/" + tagName + "calibMap.root";
+    std::cout << "fileToChain: " << fileToChain << std::endl;
     chain->Add(TString(fileToChain.c_str()));
 
     ana = new calibAnaEcalEE(chain);
