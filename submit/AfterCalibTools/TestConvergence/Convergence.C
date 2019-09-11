@@ -259,7 +259,7 @@ void Convergence::run(const string& detectorToSkip = "no", const Bool_t& saveHis
       cout << "Running chunk " << iChunk << " iteration offset = " << iterOffset << endl;
       
       Int_t PrevChunkConsidered = false;   // when using an extension, it triggers the usage of the last calibMap from previous set of iterations
-      string PathL = "root://eoscms//eos/cms" + Path_0_ + Paths_[iChunk];
+      string PathL = "root://eoscms.cern.ch/" + Path_0_ + Paths_[iChunk];
       
       for(int i=0; i<(int)nIters_[iChunk]-1; ++i){
 
