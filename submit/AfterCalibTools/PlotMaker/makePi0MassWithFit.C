@@ -68,8 +68,8 @@ int Xtal_Ix[14648]={0};
 int Xtal_Iy[14648]={0};
 int Xtal_Iz[14648]={0};
 
-static string endcap_ix_iy_zside_ietaRing = "/afs/cern.ch/user/m/mciprian/public/ECALproTools/EE_xyzToEtaRing/eerings_modified.root";
-static string deadXtalFileName = "/afs/cern.ch/user/m/mciprian/public/ECALproTools/test_DeadXtal_AlCaP0_Run2017B_3July_upToRun297723/h_DeadXtal.root";
+static string endcap_ix_iy_zside_ietaRing = "eerings_modified.root";
+static string deadXtalFileName = "h_DeadXtal.root";
 static bool drawAllMassPlot = false;
 
 //=================================================
@@ -185,7 +185,7 @@ void doPi0MassWithFit(TH1* h,
 		      const string& plotType = "etaring",
 		      const string& outDir = "./",
 		      const double lumi = 8.6,
-		      const string& filename = "root://eoscms//store/group/dpg_ecal/alca_ecalcalib/bmarzocc/CMSPOS2019/AlCaP0_2018_ULrereco_1every2/iter_0/AlCaP0_2018_ULrereco_1every2_epsilonPlots.root"
+		      const string& filename = "root://eoscms.cern.ch//store/group/dpg_ecal/alca_ecalcalib/bmarzocc/CMSPOS2019/AlCaP0_2018_ULrereco_1every2/iter_0/AlCaP0_2018_ULrereco_1every2_epsilonPlots.root"
 		      ) 
 {
 
@@ -487,7 +487,7 @@ void makePi0MassWithFit(const bool isEB = true,
 			const string& outDir = "./",
 			const double lumi = 58.83,
 			const string& dirName = "AlCaP0_2018_ULrereco_1every2",
-			const string& filePath = "root://eoscms//store/group/dpg_ecal/alca_ecalcalib/bmarzocc/CMSPOS2019/"
+			const string& filePath = "root://eoscms.cern.ch//store/group/dpg_ecal/alca_ecalcalib/bmarzocc/CMSPOS2019/"
 			) 
 {
 
